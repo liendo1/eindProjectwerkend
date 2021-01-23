@@ -1,23 +1,19 @@
 package com.example.eindproject;
 
 import androidx.annotation.NonNull;
-import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.core.app.ActivityCompat;
 import androidx.core.content.ContextCompat;
 import androidx.core.content.FileProvider;
 
 import android.Manifest;
-import android.app.Activity;
 import android.content.Intent;
 import android.content.pm.PackageManager;
 import android.graphics.Bitmap;
 import android.graphics.drawable.BitmapDrawable;
-import android.media.audiofx.EnvironmentalReverb;
 import android.net.Uri;
 import android.os.Bundle;
 import android.os.Environment;
-import android.os.PersistableBundle;
 import android.provider.MediaStore;
 import android.util.Log;
 import android.view.View;
@@ -29,7 +25,6 @@ import java.io.File;
 import java.io.FileNotFoundException;
 import java.io.FileOutputStream;
 import java.io.IOException;
-import java.net.URI;
 import java.text.SimpleDateFormat;
 import java.util.Date;
 import java.util.Locale;
@@ -56,7 +51,7 @@ public class takePicture extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_take_picture);
 
-        button = findViewById(R.id.button);
+        button = findViewById(R.id.Camera);
         imageView = findViewById(R.id.imageView2);
         saveImage = findViewById(R.id.save);
         nextBtn = findViewById(R.id.nextBtn);
@@ -118,12 +113,14 @@ public class takePicture extends AppCompatActivity {
             }
         });
 
-        nextBtn.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                startActivity(new Intent(takePicture.this,MainActivity.class));
-            }
-        });
+       nextBtn.setOnClickListener(new View.OnClickListener() {
+           @Override
+           public void onClick(View v) {
+               Intent intent = new Intent(takePicture.this,MainActivity.class);
+               startActivity(intent);
+               Log.e("pana","1111111111111111111111111111111111111111"+nextBtn);
+           }
+       });
     }
 
 

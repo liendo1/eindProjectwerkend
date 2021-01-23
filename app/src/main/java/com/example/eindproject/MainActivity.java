@@ -9,6 +9,7 @@ import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
 import android.widget.Button;
+import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.Toast;
 
@@ -43,6 +44,7 @@ public class MainActivity extends AppCompatActivity implements com.example.eindp
     Button btnUpload;
     ImageView imageViewUpload;
     Uri selectedFileUri;
+
 
 
     ProgressDialog dialog;
@@ -83,7 +85,8 @@ public class MainActivity extends AppCompatActivity implements com.example.eindp
         btnUpload = (Button) findViewById(R.id.UploadBtn);
         imageViewUpload = (ImageView) findViewById(R.id.imageViewUpload);
 
-        // Event
+
+        // Event for the click
         imageViewUpload.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -132,7 +135,7 @@ public class MainActivity extends AppCompatActivity implements com.example.eindp
                                         dialog.dismiss();
                                         String michael =  response.body().replaceAll("^[\"']+|[\"']+$", "");
 
-                                        String image_processed_link = new StringBuilder("http://192.168.0.13:5000/" +
+                                        String image_processed_link = new StringBuilder("http://192.168.0.14:5000/" +
                                                 michael).toString();
 
 

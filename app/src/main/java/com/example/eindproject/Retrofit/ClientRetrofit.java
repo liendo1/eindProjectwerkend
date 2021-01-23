@@ -10,7 +10,7 @@ public class ClientRetrofit {
 
         if (retroFitClient == null){
             retroFitClient = new Retrofit.Builder()
-                    .baseUrl("http://192.168.0.13:5000")
+                    .baseUrl("http://192.168.0.14:5000/")
                     .addConverterFactory(ScalarsConverterFactory.create())
                     .build();
         }
